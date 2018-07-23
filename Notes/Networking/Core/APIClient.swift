@@ -32,6 +32,13 @@ protocol ApiClient {
     func cancelTasks()
 }
 
+protocol URLSessionProtocol {
+    func dataTask(with request: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> ()) -> URLSessionDataTask
+    func getAllTasks(completionHandler: @escaping ([URLSessionTask]) -> ())
+}
+
+extension URLSession: URLSessionProtocol { }
+
 final class ApiClientImplementation: ApiClient {
     
     // MARK: - Public Properties
@@ -40,7 +47,7 @@ final class ApiClientImplementation: ApiClient {
         return ApiClientImplementation(urlSessionConfiguration: .default, completionHandlerQueue: .main)
     }
     
-    let urlSession: URLSession
+    let urlSession: URLSessionProtocol
     
     // MARK: - Lifecycle
     

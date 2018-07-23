@@ -62,14 +62,10 @@ struct ApiParseError: LocalizedError {
 extension NSError {
     
     class var parseError: NSError {
-        return NSError(domain: "com.misha.ImageSearch", code: 999, userInfo: [NSLocalizedDescriptionKey: "Error parsing"])
-    }
-    
-    class var imageNotExistError: NSError {
-        return clientErrorwWith(code: 998, errorMessage: "Image not exist")
+        return NSError(domain: "com.misha.Notes", code: 999, userInfo: [NSLocalizedDescriptionKey: "Error parsing"])
     }
     
     static func clientErrorwWith(code: Int, errorMessage: String) -> NSError {
-        return NSError(domain: "com.misha.ImageSearch", code: code, userInfo: [NSLocalizedDescriptionKey: errorMessage])
+        return NSError(domain: "com.misha.Notes", code: code, userInfo: [NSLocalizedDescriptionKey: errorMessage])
     }
 }
