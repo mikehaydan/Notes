@@ -20,3 +20,12 @@ extension UIViewController {
         present(alertController, animated: true)
     }
 }
+
+// MARK: - BaseView
+
+extension UIViewController: BaseView {
+    
+    func showAlert(message: String) {
+        self.alert(message: message)
+    }
+}

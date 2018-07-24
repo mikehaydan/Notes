@@ -19,5 +19,5 @@ struct NoteApiModel: InitializableCodable {
 
 struct NoteModel {
     let id: Int
-    let title: String
+    var title: String
 }

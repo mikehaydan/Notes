@@ -13,4 +13,8 @@ enum Urls {
     
     static let baseUrl: URL = URL(string: baseUrlString)!
     static let notes: String = "/notes"
+    
+    static func noteBy(id: Int) -> String {
+        return "/notes/\(id)"
+    }
 }

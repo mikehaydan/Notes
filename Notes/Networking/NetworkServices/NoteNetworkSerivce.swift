@@ -9,12 +9,21 @@
 import Foundation
 
 typealias NotesListCompletion = (Result<[NoteModel]>) -> ()
+typealias NoteCompletion = (Result<NoteModel>) -> ()
+typealias RemoveCompletion = (Result<VoidResponse>) -> ()
 
 protocol NoteNetworkService {
     func getAllNotes(completion: @escaping NotesListCompletion)
+    func updateNoteWith(id: Int, with text: String, completion: @escaping NoteCompletion)
+    func createNoteWith(text: String, completion: @escaping NoteCompletion)
+    func removeNoteWith(id: Int, completion: @escaping RemoveCompletion)
 }
 
 final class NoteNetworkSerivceImplementation: NoteNetworkService {
+    
+    enum Keys {
+        static let title: String = "title"
+    }
     
     // MARK: - Properties
     
@@ -35,6 +44,49 @@ final class NoteNetworkSerivceImplementation: NoteNetworkService {
             case let .success(response):
                 let resultToBeReturned = response.entity.map({ $0.note })
                 completion(.success(resultToBeReturned))
+            case let .failure(error):
+                completion(.failure(error))
+            }
+        }
+    }
+    
+    func updateNoteWith(id: Int, with text: String, completion: @escaping NoteCompletion) {
+        let params = [Keys.title: text]
+        let url = Urls.noteBy(id: id)
+        let request = URLRequest.requestWithURL(path: url, method: .put, bodyParameters: params)
+        apiClient.execute(request: request) { (result: Result<ApiResponse<NoteApiModel>>) in
+            switch result {
+            case let .success(response):
+                let resultToBeReturned = response.entity.note
+                completion(.success(resultToBeReturned))
+            case let .failure(error):
+                completion(.failure(error))
+            }
+        }
+    }
+    
+    func createNoteWith(text: String, completion: @escaping NoteCompletion) {
+        let params = [Keys.title: text]
+        let url = Urls.notes
+        let request = URLRequest.requestWithURL(path: url, method: .post, bodyParameters: params)
+        apiClient.execute(request: request) { (result: Result<ApiResponse<NoteApiModel>>) in
+            switch result {
+            case let .success(response):
+                let resultToBeReturned = response.entity.note
+                completion(.success(resultToBeReturned))
+            case let .failure(error):
+                completion(.failure(error))
+            }
+        }
+    }
+    
+    func removeNoteWith(id: Int, completion: @escaping RemoveCompletion) {
+        let url = Urls.noteBy(id: id)
+        let request = URLRequest.requestWithURL(path: url, method: .delete)
+        apiClient.execute(request: request) { (result: Result<ApiResponse<VoidResponse>>) in
+            switch result {
+            case let .success(response):
+                completion(.success(response.entity))
             case let .failure(error):
                 completion(.failure(error))
             }

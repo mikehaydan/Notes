@@ -8,17 +8,21 @@
 
 import Foundation
 
-protocol NotesListView: class {
+protocol NotesListView: BaseView {
     func reloadUI()
     func showLoader()
     func hideLoader()
-    func showAlert(message: String)
+    func reloadUIAt(index: Int)
+    func removeItemAt(index: Int)
 }
 
 protocol NotesListPresenter {
     var dataSourceCount: Int { get }
     func getData()
     func confgigure(view: NoteListItemTableViewCellView, at index: Int)
+    func prepare(view: EditNoteView, withNoteAt index: Int)
+    func prepare(view: CreateNoteView)
+    func removeItemAt(index: Int)
 }
 
 final class NotesListPresenterImplementation: NotesListPresenter {
@@ -61,8 +65,55 @@ final class NotesListPresenterImplementation: NotesListPresenter {
         }
     }
     
+    func removeItemAt(index: Int) {
+        view.showLoader()
+        let note = dataSource[index]
+        notesNetworkService.removeNoteWith(id: note.id) { [weak self] (result) in
+            if let strongSelf = self {
+                strongSelf.view.hideLoader()
+                switch result {
+                case .success:
+                    strongSelf.dataSource.remove(at: index)
+                    strongSelf.view.removeItemAt(index: index)
+                case let .failure(error):
+                    strongSelf.view.showAlert(message: error.localizedDescription)
+                }
+            }
+        }
+    }
+    
     func confgigure(view: NoteListItemTableViewCellView, at index: Int) {
         let model = dataSource[index]
         view.set(title: model.title)
+    }
+    
+    func prepare(view: EditNoteView, withNoteAt index: Int) {
+        let note = dataSource[index]
+        let presenter = EditNotePresenterImplementation(view: view,
+                                                        note: note,
+                                                        delegate: self,
+                                                        noteNetworkService: notesNetworkService,
+                                                        noteIndex: index)
+        view.presenter = presenter
+    }
+    
+    func prepare(view: CreateNoteView) {
+        let presenter = CreateNotePresenterImplementation(view: view, delegate: self, noteNetworkService: notesNetworkService)
+        view.presenter = presenter
+    }
+}
+
+// MARK: - EditNoteDelegate
+
+extension NotesListPresenterImplementation: EditNoteDelegate {
+    
+    func noteWasUpdatedWith(text: String, by index: Int) {
+        self.dataSource[index].title = text
+        view.reloadUIAt(index: index)
+    }
+    
+    func noteCreated(note: NoteModel) {
+        self.dataSource.append(note)
+        view.reloadUI()
     }
 }

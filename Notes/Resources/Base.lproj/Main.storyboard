@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Title-->
+        <!--Notes-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="NotesListViewController" customModule="Notes" customModuleProvider="target" sceneMemberID="viewController">
@@ -69,18 +69,125 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="bZ8-he-dZ7">
-                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="NfU-ph-TQj"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="0G8-Fs-E2t"/>
+                    <navigationItem key="navigationItem" title="Notes" id="bZ8-he-dZ7">
+                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="NfU-ph-TQj">
+                            <connections>
+                                <action selector="createNoteAction:" destination="BYZ-38-t0r" id="h9s-H5-FP9"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="0G8-Fs-E2t">
+                            <connections>
+                                <action selector="setEditingAction:" destination="BYZ-38-t0r" id="HqQ-i0-dlI"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="activityIndicatorView" destination="ntU-Ob-Tm3" id="Sqg-ir-wEM"/>
                         <outlet property="tableView" destination="JYH-GU-3p6" id="KQN-vo-eme"/>
+                        <segue destination="wvl-NQ-MlN" kind="show" identifier="editNote" id="N4F-Je-cPv"/>
+                        <segue destination="X9R-RQ-zzl" kind="show" identifier="createNote" id="mAK-Wv-ua6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+        </scene>
+        <!--Create Note View Controller-->
+        <scene sceneID="mGM-k7-jIe">
+            <objects>
+                <viewController id="X9R-RQ-zzl" customClass="CreateNoteViewController" customModule="Notes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="14o-QZ-DT3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fZA-as-rk0">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="m8H-BL-I4D">
+                                <rect key="frame" x="169" y="347" width="37" height="37"/>
+                                <color key="color" red="0.50588235290000005" green="0.50588235290000005" blue="0.50588235290000005" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="sgh-K4-xP5" firstAttribute="bottom" secondItem="fZA-as-rk0" secondAttribute="bottom" id="3FH-bb-dm4"/>
+                            <constraint firstItem="sgh-K4-xP5" firstAttribute="trailing" secondItem="fZA-as-rk0" secondAttribute="trailing" id="3aC-2h-5fb"/>
+                            <constraint firstItem="fZA-as-rk0" firstAttribute="top" secondItem="sgh-K4-xP5" secondAttribute="top" id="Cne-HH-PNf"/>
+                            <constraint firstItem="m8H-BL-I4D" firstAttribute="centerY" secondItem="sgh-K4-xP5" secondAttribute="centerY" id="NE3-xH-mzZ"/>
+                            <constraint firstItem="m8H-BL-I4D" firstAttribute="centerX" secondItem="sgh-K4-xP5" secondAttribute="centerX" id="QdF-Db-JI1"/>
+                            <constraint firstItem="fZA-as-rk0" firstAttribute="leading" secondItem="sgh-K4-xP5" secondAttribute="leading" id="sbO-Vv-B52"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="sgh-K4-xP5"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="v8n-c2-c3s">
+                        <barButtonItem key="rightBarButtonItem" title="Create" id="pSP-ie-arJ">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="X9R-RQ-zzl" id="e89-41-5ZP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="activityIndicatorView" destination="m8H-BL-I4D" id="9bj-Ps-kkp"/>
+                        <outlet property="saveBarButtonItem" destination="pSP-ie-arJ" id="VAr-vK-sqj"/>
+                        <outlet property="textView" destination="fZA-as-rk0" id="4Nz-F4-tUF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7sN-h1-ms8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="932" y="-143"/>
+        </scene>
+        <!--Edit Note View Controller-->
+        <scene sceneID="a34-BM-VcO">
+            <objects>
+                <viewController id="wvl-NQ-MlN" customClass="EditNoteViewController" customModule="Notes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nwb-Sn-hor">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="quU-ND-OLe">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="wvl-NQ-MlN" id="CVf-xj-bdO"/>
+                                </connections>
+                            </textView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="qJo-Un-1JH">
+                                <rect key="frame" x="169" y="347" width="37" height="37"/>
+                                <color key="color" red="0.50588235290000005" green="0.50588235290000005" blue="0.50588235290000005" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Do1-54-9k8" firstAttribute="trailing" secondItem="quU-ND-OLe" secondAttribute="trailing" id="Iwo-4M-Jlr"/>
+                            <constraint firstItem="qJo-Un-1JH" firstAttribute="centerX" secondItem="Do1-54-9k8" secondAttribute="centerX" id="Kh9-F1-l5v"/>
+                            <constraint firstItem="qJo-Un-1JH" firstAttribute="centerY" secondItem="Do1-54-9k8" secondAttribute="centerY" id="Vdu-gK-Ckj"/>
+                            <constraint firstItem="quU-ND-OLe" firstAttribute="leading" secondItem="Do1-54-9k8" secondAttribute="leading" id="e80-8v-ZSV"/>
+                            <constraint firstItem="quU-ND-OLe" firstAttribute="top" secondItem="Do1-54-9k8" secondAttribute="top" id="eh0-Bw-uag"/>
+                            <constraint firstItem="Do1-54-9k8" firstAttribute="bottom" secondItem="quU-ND-OLe" secondAttribute="bottom" id="jNX-Ja-K42"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Do1-54-9k8"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="wsZ-CJ-UEW">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Save" id="tdL-xG-dGH">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="wvl-NQ-MlN" id="RsB-cW-7jJ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="activityIndicatorView" destination="qJo-Un-1JH" id="ZRx-Vv-cu8"/>
+                        <outlet property="saveBarButtonItem" destination="tdL-xG-dGH" id="eOY-rK-SRu"/>
+                        <outlet property="textView" destination="quU-ND-OLe" id="WqG-0K-iWH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kvg-xi-6vH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="932" y="564"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Mbf-oW-iWb">

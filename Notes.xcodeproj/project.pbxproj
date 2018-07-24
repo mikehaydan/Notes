@@ -28,6 +28,12 @@
 		E8F5C41821064D7D007315DC /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F5C41721064D7D007315DC /* Note.swift */; };
 		E8F5C41A21064E7D007315DC /* NoteNetworkSerivce.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F5C41921064E7D007315DC /* NoteNetworkSerivce.swift */; };
 		E8F5C4202106529F007315DC /* NoteListItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F5C41F2106529F007315DC /* NoteListItemTableViewCell.swift */; };
+		E8F5C42C21077CC8007315DC /* EditNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F5C42B21077CC8007315DC /* EditNoteViewController.swift */; };
+		E8F5C42E21077CE3007315DC /* EditNotePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F5C42D21077CE3007315DC /* EditNotePresenter.swift */; };
+		E8F5C430210781F9007315DC /* String + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F5C42F210781F9007315DC /* String + Extensions.swift */; };
+		E8F5C432210782A1007315DC /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F5C431210782A1007315DC /* BaseView.swift */; };
+		E8F5C43521078E1F007315DC /* CreateNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F5C43421078E1F007315DC /* CreateNoteViewController.swift */; };
+		E8F5C43721078E41007315DC /* CreateNotePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F5C43621078E41007315DC /* CreateNotePresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +72,12 @@
 		E8F5C41721064D7D007315DC /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		E8F5C41921064E7D007315DC /* NoteNetworkSerivce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteNetworkSerivce.swift; sourceTree = "<group>"; };
 		E8F5C41F2106529F007315DC /* NoteListItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListItemTableViewCell.swift; sourceTree = "<group>"; };
+		E8F5C42B21077CC8007315DC /* EditNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNoteViewController.swift; sourceTree = "<group>"; };
+		E8F5C42D21077CE3007315DC /* EditNotePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNotePresenter.swift; sourceTree = "<group>"; };
+		E8F5C42F210781F9007315DC /* String + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Extensions.swift"; sourceTree = "<group>"; };
+		E8F5C431210782A1007315DC /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		E8F5C43421078E1F007315DC /* CreateNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNoteViewController.swift; sourceTree = "<group>"; };
+		E8F5C43621078E41007315DC /* CreateNotePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNotePresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +143,8 @@
 		E8F5C3ED21064736007315DC /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				E8F5C43321078DFC007315DC /* CreateNoteViewController */,
+				E8F5C42A21077CAE007315DC /* EditNoteViewController */,
 				E8F5C41121064B49007315DC /* NotesListViewController */,
 			);
 			path = ViewControllers;
@@ -169,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				E8F5C4022106476E007315DC /* InitializableCodable.swift */,
+				E8F5C431210782A1007315DC /* BaseView.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -181,6 +196,7 @@
 				E8F5C4072106477C007315DC /* Dictionary + Extensions.swift */,
 				E8F5C4082106477C007315DC /* UIViewController + Extensions.swift */,
 				E8F5C4092106477C007315DC /* UIView + Extensions.swift */,
+				E8F5C42F210781F9007315DC /* String + Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -251,6 +267,24 @@
 				E8F5C41F2106529F007315DC /* NoteListItemTableViewCell.swift */,
 			);
 			path = NoteListItemTableViewCell;
+			sourceTree = "<group>";
+		};
+		E8F5C42A21077CAE007315DC /* EditNoteViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E8F5C42B21077CC8007315DC /* EditNoteViewController.swift */,
+				E8F5C42D21077CE3007315DC /* EditNotePresenter.swift */,
+			);
+			path = EditNoteViewController;
+			sourceTree = "<group>";
+		};
+		E8F5C43321078DFC007315DC /* CreateNoteViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E8F5C43421078E1F007315DC /* CreateNoteViewController.swift */,
+				E8F5C43621078E41007315DC /* CreateNotePresenter.swift */,
+			);
+			path = CreateNoteViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -358,17 +392,23 @@
 				E8F5C4202106529F007315DC /* NoteListItemTableViewCell.swift in Sources */,
 				E8F5C3FA21064762007315DC /* HTTPError.swift in Sources */,
 				E8F5C41521064B8E007315DC /* NotesListPresenter.swift in Sources */,
+				E8F5C42C21077CC8007315DC /* EditNoteViewController.swift in Sources */,
 				E8F5C4032106476E007315DC /* InitializableCodable.swift in Sources */,
 				E8F5C41A21064E7D007315DC /* NoteNetworkSerivce.swift in Sources */,
+				E8F5C42E21077CE3007315DC /* EditNotePresenter.swift in Sources */,
 				E8F5C40B2106477C007315DC /* URLRequest + Extension.swift in Sources */,
+				E8F5C43721078E41007315DC /* CreateNotePresenter.swift in Sources */,
 				E8F5C41821064D7D007315DC /* Note.swift in Sources */,
 				E8F5C40E2106477C007315DC /* UIView + Extensions.swift in Sources */,
 				E8F5C3CE2106472C007315DC /* AppDelegate.swift in Sources */,
 				E8F5C40C2106477C007315DC /* Dictionary + Extensions.swift in Sources */,
 				E8F5C40D2106477C007315DC /* UIViewController + Extensions.swift in Sources */,
+				E8F5C430210781F9007315DC /* String + Extensions.swift in Sources */,
 				E8F5C41321064B76007315DC /* NotesListViewController.swift in Sources */,
 				E8F5C3FB21064762007315DC /* APIResponse.swift in Sources */,
 				E8F5C3FC21064762007315DC /* Errors.swift in Sources */,
+				E8F5C43521078E1F007315DC /* CreateNoteViewController.swift in Sources */,
+				E8F5C432210782A1007315DC /* BaseView.swift in Sources */,
 				E8F5C3F921064762007315DC /* APIClient.swift in Sources */,
 				E8F5C40021064762007315DC /* Urls.swift in Sources */,
 			);
