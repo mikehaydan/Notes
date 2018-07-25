@@ -14,7 +14,7 @@ CreateNoteViewController - controller shows after tap on "Create" button on navi
 
 //
 
-App suppoerts two languages: Russian and English
+App supports two languages: Russian and English
 
 //
 
