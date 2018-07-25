@@ -20,6 +20,7 @@ final class NotesListViewController: UIViewController {
     
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var activityIndicatorView: UIActivityIndicatorView!
+    private let refreshControl: UIRefreshControl = UIRefreshControl()
     private var presenter: NotesListPresenter!
     private var selectedNoteIndex: Int = 0
     
@@ -53,11 +54,17 @@ final class NotesListViewController: UIViewController {
         tableView.setEditing(!tableView.isEditing, animated: true)
     }
     
+    @IBAction private func refreshAction() {
+        presenter.getData()
+        refreshControl.endRefreshing()
+    }
+    
     // MARK: - Private
     
     private func preparePresenter() {
         let noteNetworkService = NoteNetworkSerivceImplementation(apiClient: ApiClientImplementation.defaultConfiguration)
         presenter = NotesListPresenterImplementation(view: self, notesNetworkService: noteNetworkService)
+        presenter.preparePresenter()
         presenter.getData()
     }
     
@@ -104,6 +111,12 @@ extension NotesListViewController: UITableViewDelegate {
 // MARK: - NotesListView
 
 extension NotesListViewController: NotesListView {
+    
+    func prepareUI() {
+        refreshControl.isEnabled = false
+        tableView.refreshControl = refreshControl
+        refreshControl.addTarget(self, action: #selector(refreshAction), for: .valueChanged)
+    }
     
     func removeItemAt(index: Int) {
         tableView.beginUpdates()

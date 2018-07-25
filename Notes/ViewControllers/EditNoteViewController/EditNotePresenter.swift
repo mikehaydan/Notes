@@ -9,7 +9,7 @@
 import Foundation
 
 protocol EditNoteDelegate: class {
-    func noteWasUpdatedWith(text: String, by index: Int)
+    func noteWasUpdatedWith(text: String, at index: Int)
     func noteCreated(note: NoteModel)
 }
 
@@ -72,7 +72,7 @@ final class EditNotePresenterImplementation: EditNotePresenter {
                     switch result {
                     case .success:
                         strongSelf.view.showAlert(message: "Success".localized)
-                        strongSelf.delegate?.noteWasUpdatedWith(text: text, by: strongSelf.noteIndex)
+                        strongSelf.delegate?.noteWasUpdatedWith(text: text, at: strongSelf.noteIndex)
                     case let .failure(error):
                         strongSelf.view.showAlert(message: error.localizedDescription)
                     }

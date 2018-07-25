@@ -9,6 +9,7 @@
 import Foundation
 
 protocol NotesListView: BaseView {
+    func prepareUI()
     func reloadUI()
     func showLoader()
     func hideLoader()
@@ -18,11 +19,12 @@ protocol NotesListView: BaseView {
 
 protocol NotesListPresenter {
     var dataSourceCount: Int { get }
-    func getData()
+    func preparePresenter()
     func confgigure(view: NoteListItemTableViewCellView, at index: Int)
     func prepare(view: EditNoteView, withNoteAt index: Int)
     func prepare(view: CreateNoteView)
     func removeItemAt(index: Int)
+    func getData()
 }
 
 final class NotesListPresenterImplementation: NotesListPresenter {
@@ -48,6 +50,10 @@ final class NotesListPresenterImplementation: NotesListPresenter {
     
     
     // MARK: - Public
+    
+    func preparePresenter() {
+        view.prepareUI()
+    }
     
     func getData() {
         view.showLoader()
@@ -107,7 +113,7 @@ final class NotesListPresenterImplementation: NotesListPresenter {
 
 extension NotesListPresenterImplementation: EditNoteDelegate {
     
-    func noteWasUpdatedWith(text: String, by index: Int) {
+    func noteWasUpdatedWith(text: String, at index: Int) {
         self.dataSource[index].title = text
         view.reloadUIAt(index: index)
     }

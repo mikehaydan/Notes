@@ -7,13 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E81A2E392108D6A700354709 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81A2E382108D6A700354709 /* Note.swift */; };
+		E81A2E3C2108D84A00354709 /* CreateNotePresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81A2E3B2108D84A00354709 /* CreateNotePresenterTest.swift */; };
+		E81A2E3F2108D8FE00354709 /* NotesListViewSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81A2E3E2108D8FE00354709 /* NotesListViewSpy.swift */; };
+		E81A2E412108E0F000354709 /* NoteListItemTableViewCellViewSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81A2E402108E0F000354709 /* NoteListItemTableViewCellViewSpy.swift */; };
+		E81A2E432108E24C00354709 /* EditNoteViewSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81A2E422108E24C00354709 /* EditNoteViewSpy.swift */; };
+		E81A2E452108E4F500354709 /* CreateNoteViewSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81A2E442108E4F500354709 /* CreateNoteViewSpy.swift */; };
+		E81A2E472108E8EE00354709 /* EditNotePresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81A2E462108E8EE00354709 /* EditNotePresenterTest.swift */; };
 		E82169BC2108C84700C5C947 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E82169BE2108C84700C5C947 /* Localizable.strings */; };
 		E82169C62108CEEC00C5C947 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E82169C42108CEEC00C5C947 /* InfoPlist.strings */; };
+		E82169CB2108D17D00C5C947 /* UrlSessionStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82169CA2108D17D00C5C947 /* UrlSessionStub.swift */; };
+		E82169CD2108D2F300C5C947 /* ApiClientImplelentationSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82169CC2108D2F300C5C947 /* ApiClientImplelentationSpy.swift */; };
+		E82169CF2108D4AC00C5C947 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82169CE2108D4AC00C5C947 /* Result.swift */; };
+		E82169D12108D56D00C5C947 /* NoteNetworkServiceStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82169D02108D56D00C5C947 /* NoteNetworkServiceStub.swift */; };
 		E8F5C3CE2106472C007315DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F5C3CD2106472C007315DC /* AppDelegate.swift */; };
 		E8F5C3D32106472C007315DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8F5C3D12106472C007315DC /* Main.storyboard */; };
 		E8F5C3D52106472D007315DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8F5C3D42106472D007315DC /* Assets.xcassets */; };
 		E8F5C3D82106472D007315DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8F5C3D62106472D007315DC /* LaunchScreen.storyboard */; };
-		E8F5C3E32106472E007315DC /* NotesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F5C3E22106472E007315DC /* NotesTests.swift */; };
 		E8F5C3F921064762007315DC /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F5C3F021064762007315DC /* APIClient.swift */; };
 		E8F5C3FA21064762007315DC /* HTTPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F5C3F121064762007315DC /* HTTPError.swift */; };
 		E8F5C3FB21064762007315DC /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F5C3F221064762007315DC /* APIResponse.swift */; };
@@ -49,12 +59,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E81A2E382108D6A700354709 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		E81A2E3B2108D84A00354709 /* CreateNotePresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNotePresenterTest.swift; sourceTree = "<group>"; };
+		E81A2E3E2108D8FE00354709 /* NotesListViewSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesListViewSpy.swift; sourceTree = "<group>"; };
+		E81A2E402108E0F000354709 /* NoteListItemTableViewCellViewSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListItemTableViewCellViewSpy.swift; sourceTree = "<group>"; };
+		E81A2E422108E24C00354709 /* EditNoteViewSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNoteViewSpy.swift; sourceTree = "<group>"; };
+		E81A2E442108E4F500354709 /* CreateNoteViewSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNoteViewSpy.swift; sourceTree = "<group>"; };
+		E81A2E462108E8EE00354709 /* EditNotePresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNotePresenterTest.swift; sourceTree = "<group>"; };
 		E82169B82108C4E000C5C947 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		E82169B92108C4E000C5C947 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		E82169BF2108C84B00C5C947 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E82169C02108C85C00C5C947 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E82169C52108CEEC00C5C947 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E82169C72108CF0800C5C947 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E82169CA2108D17D00C5C947 /* UrlSessionStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlSessionStub.swift; sourceTree = "<group>"; };
+		E82169CC2108D2F300C5C947 /* ApiClientImplelentationSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClientImplelentationSpy.swift; sourceTree = "<group>"; };
+		E82169CE2108D4AC00C5C947 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		E82169D02108D56D00C5C947 /* NoteNetworkServiceStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteNetworkServiceStub.swift; sourceTree = "<group>"; };
 		E8F5C3CA2106472C007315DC /* Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8F5C3CD2106472C007315DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8F5C3D22106472C007315DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -62,7 +83,6 @@
 		E8F5C3D72106472D007315DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E8F5C3D92106472D007315DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E8F5C3DE2106472E007315DC /* NotesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NotesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E8F5C3E22106472E007315DC /* NotesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesTests.swift; sourceTree = "<group>"; };
 		E8F5C3E42106472E007315DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E8F5C3F021064762007315DC /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		E8F5C3F121064762007315DC /* HTTPError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPError.swift; sourceTree = "<group>"; };
@@ -106,6 +126,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E81A2E372108D69700354709 /* Creators */ = {
+			isa = PBXGroup;
+			children = (
+				E81A2E382108D6A700354709 /* Note.swift */,
+			);
+			path = Creators;
+			sourceTree = "<group>";
+		};
+		E81A2E3A2108D76200354709 /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				E81A2E3B2108D84A00354709 /* CreateNotePresenterTest.swift */,
+				E81A2E462108E8EE00354709 /* EditNotePresenterTest.swift */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		E81A2E3D2108D8E500354709 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E81A2E3E2108D8FE00354709 /* NotesListViewSpy.swift */,
+				E81A2E402108E0F000354709 /* NoteListItemTableViewCellViewSpy.swift */,
+				E81A2E422108E24C00354709 /* EditNoteViewSpy.swift */,
+				E81A2E442108E4F500354709 /* CreateNoteViewSpy.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E82169C82108D13800C5C947 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				E82169C92108D14B00C5C947 /* Requests */,
+				E82169CA2108D17D00C5C947 /* UrlSessionStub.swift */,
+				E82169CC2108D2F300C5C947 /* ApiClientImplelentationSpy.swift */,
+				E82169CE2108D4AC00C5C947 /* Result.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		E82169C92108D14B00C5C947 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				E82169D02108D56D00C5C947 /* NoteNetworkServiceStub.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
 		E8F5C3C12106472C007315DC = {
 			isa = PBXGroup;
 			children = (
@@ -142,7 +209,10 @@
 		E8F5C3E12106472E007315DC /* NotesTests */ = {
 			isa = PBXGroup;
 			children = (
-				E8F5C3E22106472E007315DC /* NotesTests.swift */,
+				E81A2E3D2108D8E500354709 /* Views */,
+				E81A2E3A2108D76200354709 /* Presenters */,
+				E81A2E372108D69700354709 /* Creators */,
+				E82169C82108D13800C5C947 /* Helper */,
 				E8F5C3E42106472E007315DC /* Info.plist */,
 			);
 			path = NotesTests;
@@ -350,6 +420,7 @@
 					};
 					E8F5C3DD2106472E007315DC = {
 						CreatedOnToolsVersion = 9.4;
+						LastSwiftMigration = 0940;
 						TestTargetID = E8F5C3C92106472C007315DC;
 					};
 				};
@@ -431,7 +502,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E8F5C3E32106472E007315DC /* NotesTests.swift in Sources */,
+				E81A2E392108D6A700354709 /* Note.swift in Sources */,
+				E81A2E472108E8EE00354709 /* EditNotePresenterTest.swift in Sources */,
+				E82169CF2108D4AC00C5C947 /* Result.swift in Sources */,
+				E82169CD2108D2F300C5C947 /* ApiClientImplelentationSpy.swift in Sources */,
+				E82169D12108D56D00C5C947 /* NoteNetworkServiceStub.swift in Sources */,
+				E81A2E412108E0F000354709 /* NoteListItemTableViewCellViewSpy.swift in Sources */,
+				E81A2E3F2108D8FE00354709 /* NotesListViewSpy.swift in Sources */,
+				E81A2E432108E24C00354709 /* EditNoteViewSpy.swift in Sources */,
+				E81A2E3C2108D84A00354709 /* CreateNotePresenterTest.swift in Sources */,
+				E82169CB2108D17D00C5C947 /* UrlSessionStub.swift in Sources */,
+				E81A2E452108E4F500354709 /* CreateNoteViewSpy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -642,6 +723,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = NotesTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -651,6 +733,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mike.NotesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Notes.app/Notes";
@@ -662,6 +745,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = NotesTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
