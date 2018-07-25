@@ -13,4 +13,8 @@ extension String {
     var isEmptyWithWhitespace: Bool {
         return self.trimmingCharacters(in: CharacterSet.whitespaces).isEmpty
     }
+    
+    var localized: String {
+        return NSLocalizedString(self, comment: "")
+    }
 }

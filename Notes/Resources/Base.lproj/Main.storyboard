@@ -75,7 +75,7 @@
                                 <action selector="createNoteAction:" destination="BYZ-38-t0r" id="h9s-H5-FP9"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="0G8-Fs-E2t">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="edit" id="0G8-Fs-E2t">
                             <connections>
                                 <action selector="setEditingAction:" destination="BYZ-38-t0r" id="HqQ-i0-dlI"/>
                             </connections>
@@ -206,4 +206,7 @@
             <point key="canvasLocation" x="-743" y="134"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="edit" width="16" height="16"/>
+    </resources>
 </document>

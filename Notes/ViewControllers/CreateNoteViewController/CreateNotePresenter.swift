@@ -40,7 +40,7 @@ final class CreateNotePresenterImplementation: EditNotePresenter {
     
     func saveNoteWith(text: String) {
         if text.isEmptyWithWhitespace {
-            view.showAlert(message: text)
+            view.showAlert(message: "EmptyTextMessage".localized)
         } else {
             view.showLoader()
             noteNetworkService.createNoteWith(text: text) { [weak self] (result) in

@@ -1,0 +1,15 @@
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "0G8-Fs-E2t"; */
+"0G8-Fs-E2t.title" = "Item";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "UGv-qj-Bu6"; */
+"UGv-qj-Bu6.text" = "Label";
+
+/* Class = "UINavigationItem"; title = "Notes"; ObjectID = "bZ8-he-dZ7"; */
+"bZ8-he-dZ7.title" = "Notes";
+
+/* Class = "UIBarButtonItem"; title = "Create"; ObjectID = "pSP-ie-arJ"; */
+"pSP-ie-arJ.title" = "Create";
+
+/* Class = "UIBarButtonItem"; title = "Save"; ObjectID = "tdL-xG-dGH"; */
+"tdL-xG-dGH.title" = "Save";

@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  Notes
+
+  Created by Mike Haydan on 25/07/2018.
+  Copyright © 2018 Misha Apps. All rights reserved.
+*/
+
+"Notes" = "Заметки";
+"Ok" = "Ок";
+"EmptyTextMessage" = "Текс не может быть пуст";
+"Success" = "Готово";

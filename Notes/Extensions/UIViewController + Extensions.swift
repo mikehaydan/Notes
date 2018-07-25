@@ -11,8 +11,8 @@ import UIKit
 extension UIViewController {
     
     func alert(message: String) {
-        let alertController = UIAlertController(title: "Notes", message: message, preferredStyle: .alert)
-        let action = UIAlertAction(title: "Ok", style: .default) { (_) in
+        let alertController = UIAlertController(title: "Notes".localized, message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "Ok".localized, style: .default) { (_) in
             alertController.dismiss(animated: true)
         }
         alertController.addAction(action)

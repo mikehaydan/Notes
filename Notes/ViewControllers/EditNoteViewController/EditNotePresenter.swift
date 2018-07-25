@@ -63,7 +63,7 @@ final class EditNotePresenterImplementation: EditNotePresenter {
     
     func saveNoteWith(text: String) {
         if text.isEmptyWithWhitespace {
-            view.showAlert(message: text)
+            view.showAlert(message: "EmptyTextMessage".localized)
         } else {
             view.showLoader()
             noteNetworkService.updateNoteWith(id: note.id, with: text) { [weak self] (result) in
@@ -71,7 +71,7 @@ final class EditNotePresenterImplementation: EditNotePresenter {
                     strongSelf.view.hideLoader()
                     switch result {
                     case .success:
-                        strongSelf.view.showAlert(message: "Success!")
+                        strongSelf.view.showAlert(message: "Success".localized)
                         strongSelf.delegate?.noteWasUpdatedWith(text: text, by: strongSelf.noteIndex)
                     case let .failure(error):
                         strongSelf.view.showAlert(message: error.localizedDescription)
